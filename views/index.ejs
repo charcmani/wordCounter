@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Word Counter</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/" method="post">
+          <input name="n" type="text" class="ghost-input" placeholder="N(integer)" required>
+          <input type="submit" class="ghost-button" value="Get N Most Frequent Words">
+        </form>
+        <br><br>
+        <% if(result.length !==0){ %>
+        <table>
+        <tr>
+          <th><center>#</center></th><th><center>Word</center></th><th><center>Count</center></th>
+        </tr>
+        <% for(var i=0; i < fre.length; i++) { %>
+           <tr>
+             <td><%= i+1 %></td>
+             <td><%= result[i] %></td>
+             <td><%= fre[i] %></td>
+           </tr>
+        <%}%>
+        </table>
+        <% } %>
+        <% if(error !== null){ %>
+          <p><%= error %></p>
+        <% } %>
+      </fieldset>
+    </div>
+  </body>
+</html>
