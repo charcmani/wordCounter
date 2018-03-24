@@ -63,6 +63,7 @@ app.listen(3000, function () {
     items.sort(function(first, second) {
         return second[1] - first[1];
     });
+    //.catch(err => console.error(err));
    
 });
 })
