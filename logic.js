@@ -22,17 +22,4 @@ function wordFreq(string) {
     return freqMap;
     //return the map to server.js
 }
-/*for (var i=0;i<string.length;i++)
-    {	
-    	if((string[i]>='a'&& string[i]<='z') || (string[i]>='A'&& string[i]<='Z') || 
-    		(string[i]=="'")||( string[i]=="-")||(string[i]=="\\"))
-    	{if (h==-1)
-    		l=h=i;
-    	else h=i;
-    	}
-    	else{
-    		words.push(string.slice(l,h+1).toLowerCase());
-    		l=h=-1;
-    	}
-    }*/
 module.exports.wordFreq=wordFreq;
