@@ -12,7 +12,7 @@ app.set('view engine', 'ejs')
 
 
 app.get('/', function (req, res) {
-  res.render('index', {result: [],fre:null, error: null});
+  res.render('index', {result: null,fre:null, error: null});
   //render index.ejs
 })
 
@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   let n = parseInt(req.body.n, 10);
   //check if the input is an integer
-  if (n !== NaN){
+  if (!isNaN(n) && n>=0){
      //check if the input number is greater than the length of items array
      //if yes make n= count of elements in items
      if (n>items.length)n=items.length-1;
@@ -37,7 +37,8 @@ app.post('/', function (req, res) {
       res.render('index',{result:word,fre:value,error:null});
   }
    else{
-    res.render('index', {result: [],fre:null,error: "Error, please enter an integer"});
+    console.log("error in input");
+    res.render('index', {result: null,fre:null,error: "Opps! you made a tiny terrible mistake please enter positive integer"});
     }
 })
 
