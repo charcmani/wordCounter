@@ -3,7 +3,7 @@ function wordFreq(string) {
 	var l=-1,h=-1;
 	var words = string.replace(/[.?–,()/0-9]/g, '').split(/\s/);
 	//Regex to remove unwanted characters and numbers
-    console.log(words);
+    //console.log(words);
     for (var i=0;i<words.length;i++)
     {	
     	words[i]=words[i].toLowerCase();
