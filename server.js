@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cal = require('./logic');
 const fetch = require('node-fetch');
 const app = express()
-
+const port = process.env.PORT || 3000;
 var item=[];
 //array to store the final word frequency 
 app.use(express.static('public'));
@@ -44,7 +44,7 @@ app.post('/', function (req, res) {
 
 //run server on port 3000 and precalculate word frequency for future queries
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Frequency app listening on port 3000!')
 
   //fetch text from the give urls 
@@ -63,6 +63,7 @@ app.listen(3000, function () {
     // Sort the array based on the second element
     items.sort(function(first, second) {
         return second[1] - first[1];
-    });   
+    }); 
+    console.log("fetched");  
 });
 })
