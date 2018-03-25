@@ -6,6 +6,8 @@ The webapp is built on nodejs and its task is to take an integer N as an input a
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+The web app is hosted on heroku visit : https://word-counter-3000.herokuapp.com/
+
 ### Prerequisites
 
 What things you need to install the software and how to install them\
